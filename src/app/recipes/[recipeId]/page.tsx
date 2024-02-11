@@ -72,7 +72,7 @@ export default function RecipeDetails() {
           </div>
           <div className='grid gap-4 md:grid-cols-2'>
             <ul className='list-disc pl-4 space-y-2'>
-              {ingredients.map((ingredient) => {
+              {ingredients.map((ingredient: any) => {
                 return (
                   <li key={ingredient.name}>
                     {ingredient.quantity} {ingredient.name}
@@ -93,7 +93,7 @@ export default function RecipeDetails() {
           </p>
         </div>
         <ol className='list-decimal pl-4 space-y-4'>
-          {recipe.directions.map((direction, idx) => {
+          {recipe.directions.map((direction: string[], idx: number) => {
             return <li key={idx}>{direction}</li>;
           })}
         </ol>
@@ -102,7 +102,7 @@ export default function RecipeDetails() {
   );
 }
 
-function ClockIcon(props) {
+function ClockIcon(props: any) {
   return (
     <svg
       {...props}

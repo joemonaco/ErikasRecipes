@@ -77,25 +77,25 @@ export default function RecipeForm() {
   };
 
   return (
-    <div className="w-full max-w-lg p-6 space-y-4">
-      <div className="space-y-2">
-        <h1 className="text-2xl font-bold">Add Recipe</h1>
-        <p className="text-gray-500 dark:text-gray-400">
+    <div className='w-full max-w-lg p-6 space-y-4'>
+      <div className='space-y-2'>
+        <h1 className='text-2xl font-bold'>Add Recipe</h1>
+        <p className='text-gray-500 dark:text-gray-400'>
           Enter the details of your recipe
         </p>
       </div>
-      <form className="space-y-4" onSubmit={handleSubmit}>
-        <div className="space-y-2">
+      <form className='space-y-4' onSubmit={handleSubmit}>
+        <div className='space-y-2'>
           {recipeImage && (
             <Image
-              width="200"
-              height="200"
+              width='200'
+              height='200'
               alt={title}
               src={getImageUrl(recipeImage)}
             />
           )}
 
-          <Button type="button" className="bg-pink-500 hover:bg-pink-400">
+          <Button type='button' className='bg-pink-500 hover:bg-pink-400'>
             <UploadButton
               uploadUrl={generateUploadUrl}
               fileTypes={["image/*"]}
@@ -108,84 +108,84 @@ export default function RecipeForm() {
             />
           </Button>
         </div>
-        <div className="space-y-2">
-          <Label htmlFor="name">Name</Label>
+        <div className='space-y-2'>
+          <Label htmlFor='name'>Name</Label>
           <Input
-            id="name"
-            type="text"
+            id='name'
+            type='text'
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Enter recipe name"
+            placeholder='Enter recipe name'
           />
         </div>
-        <div className="space-y-2">
-          <Label htmlFor="prep">Prep Time</Label>
+        <div className='space-y-2'>
+          <Label htmlFor='prep'>Prep Time</Label>
           <Input
-            id="prep"
-            type="text"
+            id='prep'
+            type='text'
             value={prepTime}
             onChange={(e) => setPrepTime(e.target.value)}
-            placeholder="Enter Prep Time"
+            placeholder='Enter Prep Time'
           />
         </div>
-        <div className="space-y-2">
-          <Label htmlFor="cook">Cook Time</Label>
+        <div className='space-y-2'>
+          <Label htmlFor='cook'>Cook Time</Label>
           <Input
-            id="cook"
-            type="text"
+            id='cook'
+            type='text'
             value={cookTime}
             onChange={(e) => setCookTime(e.target.value)}
-            placeholder="Enter Prep Time"
+            placeholder='Enter Prep Time'
           />
         </div>
-        <div className="space-y-2">
+        <div className='space-y-2'>
           <Label>Description</Label>
           <Textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            placeholder="Description"
+            placeholder='Description'
           />
         </div>
-        <div className="space-y-2">
-          <Label htmlFor="ingredients">Ingredients</Label>
-          <ol className="list-decimal space-y-2">
+        <div className='space-y-2'>
+          <Label htmlFor='ingredients'>Ingredients</Label>
+          <ol className='list-decimal space-y-2'>
             {ingredients.map((ingredient, index) => (
               <li key={`ingredient-${index}`}>
-                <div className="flex items-center gap-2">
+                <div className='flex items-center gap-2'>
                   <Input
-                    id="ingredients"
-                    placeholder="Enter ingredient"
-                    type="text"
+                    id='ingredients'
+                    placeholder='Enter ingredient'
+                    type='text'
                     value={ingredient.name}
                     onChange={(e) =>
                       handleIngredientChange(index, "name", e.target.value)
                     }
                   />
                   <Input
-                    id="quantity"
-                    placeholder="Enter quantity"
-                    type="text"
+                    id='quantity'
+                    placeholder='Enter quantity'
+                    type='text'
                     value={ingredient.quantity}
                     onChange={(e) =>
                       handleIngredientChange(index, "quantity", e.target.value)
                     }
                   />
                   <Button
-                    variant="outline"
-                    type="button"
+                    variant='outline'
+                    type='button'
                     onClick={() => handleRemoveIngredient(index)}
                   >
                     <svg
-                      className="h-6 w-6"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
+                      className='h-6 w-6'
+                      fill='none'
+                      stroke='currentColor'
+                      viewBox='0 0 24 24'
+                      xmlns='http://www.w3.org/2000/svg'
                     >
                       <path
-                        d="M6 18L18 6M6 6l12 12"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        d='M6 18L18 6M6 6l12 12'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
                         strokeWidth={2}
                       />
                     </svg>
@@ -194,18 +194,18 @@ export default function RecipeForm() {
               </li>
             ))}
           </ol>
-          <Button variant="outline" type="button" onClick={handleAddIngredient}>
+          <Button variant='outline' type='button' onClick={handleAddIngredient}>
             Add Ingredient
           </Button>
         </div>
-        <div className="space-y-2">
-          <Label htmlFor="directions">Directions</Label>
-          <ol className="list-decimal space-y-2">
+        <div className='space-y-2'>
+          <Label htmlFor='directions'>Directions</Label>
+          <ol className='list-decimal space-y-2'>
             {directions.map((direction, index) => (
               <li key={`direction-${index}`}>
-                <div className="flex items-center gap-2">
+                <div className='flex items-center gap-2'>
                   <Input
-                    id="directions"
+                    id='directions'
                     value={direction}
                     onChange={(e) =>
                       handleDirectionChange(index, e.target.value)
@@ -213,21 +213,21 @@ export default function RecipeForm() {
                     placeholder={`Step ${index + 1}`}
                   />
                   <Button
-                    type="button"
-                    variant="outline"
+                    type='button'
+                    variant='outline'
                     onClick={() => handleRemoveDirection(index)}
                   >
                     <svg
-                      className="h-6 w-6"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
+                      className='h-6 w-6'
+                      fill='none'
+                      stroke='currentColor'
+                      viewBox='0 0 24 24'
+                      xmlns='http://www.w3.org/2000/svg'
                     >
                       <path
-                        d="M6 18L18 6M6 6l12 12"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        d='M6 18L18 6M6 6l12 12'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
                         strokeWidth={2}
                       />
                     </svg>
@@ -236,11 +236,11 @@ export default function RecipeForm() {
               </li>
             ))}
           </ol>
-          <Button variant="outline" type="button" onClick={handleAddDirection}>
+          <Button variant='outline' type='button' onClick={handleAddDirection}>
             Add Direction
           </Button>
         </div>
-        <Button className="bg-pink-500" type="submit">
+        <Button className='bg-pink-500' type='submit'>
           Submit
         </Button>
       </form>

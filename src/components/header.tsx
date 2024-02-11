@@ -98,7 +98,7 @@ export function Header() {
           Home
         </Link>
         <Link
-          href='/recipes/add'
+          href='/recipes'
           className='block text-sm px-2 py-4 text-black-700 hover:bg-pink-500 transition duration-300'
         >
           Recipes

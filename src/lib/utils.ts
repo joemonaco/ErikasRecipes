@@ -21,3 +21,10 @@ export function useActivePath(): (path: string) => boolean {
 
   return checkActivePath;
 }
+
+export function checkPassword(pw: string) {
+  if (`${process.env.NEXT_PUBLIC_ADD_RECIPE_PASSWORD}` === pw) {
+    return true;
+  }
+  else return false;
+}

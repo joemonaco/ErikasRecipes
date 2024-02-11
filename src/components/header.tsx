@@ -42,7 +42,7 @@ export function Header() {
               {/* Logo or brand name */}
               <Link href='/' className='flex items-center py-4 px-2'>
                 <span className='font-semibold text-black-500 text-lg'>
-                  Erika's Recipes
+                  Erika&apos;s Recipes
                 </span>
               </Link>
             </div>

@@ -5,7 +5,9 @@ import { Link } from "lucide-react";
 export default function Home() {
   return (
     <>
-      <h1 className='text-3xl font-bold text-center my-8'>Erika's Recipes</h1>
+      <h1 className='text-3xl font-bold text-center my-8'>
+        Erika&apos;s Recipes
+      </h1>
       <h2 className='text-xl text-center my-8'>
         A place for all my recipes curated by me! Click
         <a href='/recipes' className='text-pink-500'>
